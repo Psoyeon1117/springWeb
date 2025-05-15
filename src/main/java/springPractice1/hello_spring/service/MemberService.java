@@ -1,5 +1,6 @@
 package springPractice1.hello_spring.service;
 
+import org.springframework.stereotype.Service;
 import springPractice1.hello_spring.domain.Member;
 import springPractice1.hello_spring.repository.MemberRepository;
 import springPractice1.hello_spring.repository.MemoryMemberRepository;
@@ -9,10 +10,12 @@ import java.util.Optional;
 
 //서비스에서는 핵심 비즈니스 로직들을 구현한다.
 //서비스를 통해 다른계층에 접근함으로써 코드의 일관성을 유지하고 쳬계적이게 유지한다.
-
 public class MemberService {
-    private final MemberRepository repository = new MemoryMemberRepository();
+    private final MemberRepository repository;
 
+    public MemberService(MemberRepository repository){
+        this.repository = repository;
+    }
     //회원가입
     public Long join(Member member){
         //중복 이름을 갖는 회원이 있어선 안된다.

@@ -1,11 +1,11 @@
 package springPractice1.hello_spring.repository;
 
+import org.springframework.stereotype.Repository;
 import springPractice1.hello_spring.domain.Member;
 
 import java.util.*;
 
 //데이터 베이스에 접근. 도메인 객체를 DB에 저장하고 관리한다.
-
 public class MemoryMemberRepository implements MemberRepository{
 
     private static Map<Long, Member> store = new HashMap<>();   //메모리 임시 저장소이다.
