@@ -19,6 +19,7 @@ public class memberController {
     public memberController(MemberService memberService){
         this.memberService = memberService; //하나의 객체(memberservice)를 여러 곳에서 사용할 수 있다.
     }
+//    @Autowired MemberService memberService;   //위의 autowired와 같은 작업을 수행한다.
 
     @GetMapping("/members/new")
     public String createForm(){
